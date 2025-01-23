@@ -44,10 +44,24 @@ public class PracticFormTest {
         String mobileValue="0774334455";
         Mobilefield.sendKeys(mobileValue);
 
-        WebElement Picturefield= driver.findElement(By.id("uploadPicture"));
+        WebElement Picturefield = driver.findElement(By.id("uploadPicture"));
         //Picturefield.sendKeys("src/test/resources/1.png");
         File file = new File("src/test/resources/1.png");
         Picturefield.sendKeys(file.getAbsolutePath());
+
+        WebElement maleRadioField = driver.findElement(By.xpath("//label[@for='gender-radio-1']"));
+        WebElement femaleRadioField = driver.findElement(By.xpath("//label[@for='gender-radio-2']"));
+        WebElement otherRadioField = driver.findElement(By.xpath("//label[@for='gender-radio-3']"));
+
+        String genderRadioValue = "Male";
+
+        if (genderRadioValue.equals("Male")) {
+            maleRadioField.click();
+        } else if (genderRadioValue.equals("Female")) {
+            femaleRadioField.click();
+        } else if (genderRadioValue.equals("Other")) {
+            otherRadioField.click();
+        }
 
 
     }
