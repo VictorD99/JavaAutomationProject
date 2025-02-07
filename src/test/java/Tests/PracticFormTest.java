@@ -85,6 +85,9 @@ public class PracticFormTest {
         CityField.sendKeys("Delhi");
         CityField.sendKeys(Keys.ENTER);
 
+        WebElement SubmitElement= driver.findElement(By.id("submit"));
+        js.executeScript("arguments[0].click();", SubmitElement);
+
     }
 
 }
