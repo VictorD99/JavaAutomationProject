@@ -2,18 +2,24 @@ package Tests;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
 
 public class Exercitii {
 
     public WebDriver driver;
 
-    @Test
+    /*@Test
     public void firstEx() {
 
         driver = new ChromeDriver();
 
         driver.get("https://letcode.in/forms");
+
+        driver.manage().window().maximize();
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,400)");
@@ -28,6 +34,47 @@ public class Exercitii {
         fieldCountry.sendKeys("Romania");
         fieldCountry.sendKeys(Keys.ENTER);
 
-    }
+    } */
 
+    /*@Test
+    public void secondEx() {
+
+        driver = new ChromeDriver();
+
+        driver.get("https://www.airbnb.ie/");
+
+        driver.manage().window().maximize();
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement acceptButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Accept all']")));
+        acceptButton.click();
+
+        WebElement fieldIcons = driver.findElement(By.xpath("//span[text()='Icons']"));
+        fieldIcons.click();
+
+        Assert.assertTrue(fieldIcons.isDisplayed(), "Icons menu was not selected!");
+        System.out.println("Icons menu was successfully selected!");
+
+//        boolean isSelected = fieldIcons.isDisplayed();
+//        System.out.println("Icons menu was successfully clicked: " + isSelected);
+//        Assert.assertTrue(isSelected, "Icons menu was not clicked!");
+
+    }    */
+
+    @Test
+    public void thirdEX() {
+
+        driver = new ChromeDriver();
+
+        driver.get("https://www.barnesandnoble.com/");
+
+        driver.manage().window().maximize();
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement closeButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='onetrust-close-btn-handler onetrust-close-btn-ui banner-close-button ot-close-icon']")));
+        closeButton.click();
+
+
+
+    }
 }
