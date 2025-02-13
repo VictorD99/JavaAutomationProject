@@ -4,6 +4,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -74,6 +75,18 @@ public class Exercitii {
         WebElement closeButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='onetrust-close-btn-handler onetrust-close-btn-ui banner-close-button ot-close-icon']")));
         closeButton.click();
 
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,0)");
+
+        WebElement fieldKids = driver.findElement(By.id("rhfCategoryFlyout_Kids"));
+        fieldKids.click();
+
+        WebElement fieldAgeRestriction = driver.findElement(By.xpath("(//ul[@id='sidebar-section-Ages']//a[text()='3 - 5 years'])[1]"));
+        fieldAgeRestriction.click();
+
+//        WebElement selectedMenu = driver.findElement(By.xpath("(//ul[@id='sidebar-section-Ages']//a[text()='3 - 5 years'])[1]"));
+//        Assert.assertTrue(selectedMenu.isDisplayed(), "The '3 - 5 years' menu was NOT selected!");
+//        System.out.println("The '3 - 5 years' menu was successfully selected!");
 
 
     }
