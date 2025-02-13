@@ -22,13 +22,14 @@ public class Exercitii {
 
         driver.manage().window().maximize();
 
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,400)");
 
         WebElement fieldCountryCode = driver.findElement(By.xpath("//label[@id='countrycode']/following::select[1]"));
         fieldCountryCode.click();
         fieldCountryCode.sendKeys("Romania (+40)");
         fieldCountryCode.sendKeys(Keys.ENTER);
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,200)");
 
         WebElement fieldCountry = driver.findElement(By.xpath("//label[@id='country']/following::select[1]"));
         fieldCountry.click();
@@ -87,7 +88,8 @@ public class Exercitii {
 //        WebElement selectedMenu = driver.findElement(By.xpath("(//ul[@id='sidebar-section-Ages']//a[text()='3 - 5 years'])[1]"));
 //        Assert.assertTrue(selectedMenu.isDisplayed(), "The '3 - 5 years' menu was NOT selected!");
 //        System.out.println("The '3 - 5 years' menu was successfully selected!");
-
-
     }
 }
+
+
+
